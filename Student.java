@@ -88,13 +88,13 @@ class Student {
     public static void main(String[] args) {
         try {
             Student student1 = new Student("John Doe", "15-05-2000");
-            student1.addCourse(new Course("Fall 2024", 85));
-            student1.addCourse(new Course("Spring 2025", 90));
+            student1.addCourse(new Course("devopps 2024", 85));
+            student1.addCourse(new Course("java 2025", 90));
             student1.displayInfo();
 
             Student student2 = new Student("Jane Smith", "2000-05-15");
-            student2.addCourse(new Course("Fall 2024", 78));
-            student2.addCourse(new Course("Spring 2025", 88));
+            student2.addCourse(new Course("devopps 2024", 78));
+            student2.addCourse(new Course("java 2025", 88));
             student2.displayInfo();
 
         } catch (ParseException e) {
