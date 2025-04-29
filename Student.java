@@ -34,7 +34,7 @@ class Data {
 class Student {
     private String name;
     private Data data;
-     public Student1(String name, String dob) throws ParseException {
+     public Student(String name, String dob) throws ParseException {
         this.name = name;
         this.data = new Data(dob);
     }
@@ -45,10 +45,10 @@ class Student {
     }
  public static void main(String[] args) {
         try {
-            Student1 student1 = new Student1("John Doe", "15-05-2000");
+            Student student1 = new Student("John Doe", "15-05-2000");
             student1.displayInfo();
             
-            Student1 student2 = new Student1("Jane Smith", "2000-05-15");
+            Student student2 = new Student("Jane Smith", "2000-05-15");
             student2.displayInfo();    
         } catch (ParseException e) {
             System.out.println("Error: Invalid date format");
