@@ -1,4 +1,7 @@
-
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 class Data {
     private Date dob;
@@ -11,7 +14,7 @@ class Data {
             } else {
                 sdf = new SimpleDateFormat("dd-MM-yyyy");
             }
-            this.dob = sdf.parse(dob);
+            this.dob = (Date) sdf.parse(dob);
         } else {
             throw new IllegalArgumentException("Invalid date format");
         }
