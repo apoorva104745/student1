@@ -14,7 +14,7 @@ class Data {
             } else {
                 sdf = new SimpleDateFormat("dd-MM-yyyy");
             }
-            this.dob = (Date) sdf.parse(dob);
+            this.dob = new Date(sdf.parse(dob).getTime());  // Corrected casting
         } else {
             throw new IllegalArgumentException("Invalid date format");
         }
@@ -34,27 +34,33 @@ class Data {
         return age;
     }
 }
+
 class Student {
     private String name;
     private Data data;
-     public Student(String name, String dob) throws ParseException {
+
+    public Student(String name, String dob) throws ParseException {
         this.name = name;
         this.data = new Data(dob);
     }
+
     public void displayInfo() {
         int age = data.calculateAge();
         System.out.println("Student Name: " + name);
         System.out.println("Student Age: " + age);
     }
- public static void main(String[] args) {
+
+    public static void main(String[] args) {
         try {
             Student student1 = new Student("John Doe", "15-05-2000");
             student1.displayInfo();
-            
+
             Student student2 = new Student("Jane Smith", "2000-05-15");
-            student2.displayInfo();    
+            student2.displayInfo();
         } catch (ParseException e) {
             System.out.println("Error: Invalid date format");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
